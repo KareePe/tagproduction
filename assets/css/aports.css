@@ -1693,7 +1693,7 @@ ul {
 
 .main-slider__title {
   position: relative;
-  font-size: 90px;
+  font-size: 50px;
   color: var(--aports-white);
   font-weight: 400;
   font-family: var(--aports-font);
@@ -8020,7 +8020,7 @@ ul {
 
 .team-two__single:hover .team-two__hover {
   visibility: visible;
-  transform: translateY(0%);
+  transform: translateY(25%);
   opacity: 1;
 }
 
@@ -8126,6 +8126,7 @@ ul {
   display: block;
   overflow: hidden;
   z-index: 1;
+  height: 250px;
 }
 
 .team-two__img:before {
@@ -8149,6 +8150,8 @@ ul {
 
 .team-two__img img {
   width: 100%;
+  height: 250px;
+  object-fit: cover;
   -webkit-transition: all 500ms ease;
   transition: all 500ms ease;
 }

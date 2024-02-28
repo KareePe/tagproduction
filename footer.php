@@ -1,3 +1,6 @@
+<?php
+require 'config/dbconfig.php';
+?>
 <!--Site Footer Start-->
 <footer class="site-footer">
     <div class="site-footer__top">
@@ -20,14 +23,17 @@
                                 <h3 class="footer-widget__title">Explore</h3>
                             </div>
                             <ul class="footer-widget__Explore-list list-unstyled">
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                                <li><a href="about.html">Custom Widget</a></li>
-                                <li><a href="about.html">Shortcodes</a></li>
-                                <li><a href="about.html">Blank page</a></li>
+                                <li><a href="javascript:void(0);">Home</a></li>
+                                <li><a href="javascript:void(0);">OUR EXHIBITION STAND</a></li>
+                                <li><a href="javascript:void(0);">CONTACT US</a></li>
                             </ul>
                         </div>
                     </div>
+                    <?php
+                    $stmt = $pdo->prepare("SELECT * FROM tb_contact");
+                    $stmt->execute();
+                    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                    ?>
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
                         <div class="footer-widget__column footer-widget__Contact">
                             <div class="footer-widget__title-box">
@@ -39,15 +45,7 @@
                                         <span class="fas fa-phone-alt"></span>
                                     </div>
                                     <div class="text">
-                                        <p><a href="tel:23425446680">+23 425 4466 80</a></p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <span class="fas fa-clock"></span>
-                                    </div>
-                                    <div class="text">
-                                        <p>Mon - Sun: 8AM - 8PM</p>
+                                        <p><a href="javascript:void(0)"><?php echo $row['contactTel'] ?></a></p>
                                     </div>
                                 </li>
                                 <li>
@@ -55,13 +53,13 @@
                                         <span class="fas fa-envelope"></span>
                                     </div>
                                     <div class="text">
-                                        <p><a href="mailto:needhelp@company.com">needhelp@company.com</a></p>
+                                        <p><a href="mailto:<?php echo $row['contactMail'] ?>"><?php echo $row['contactMail'] ?></a></p>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="site-footer__social">
-                                        <a href="#"><i class="fab fa-facebook"></i></a>
-                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                        <a href="https://www.facebook.com/<?php echo $row['contactFacebook'] ?>"><i class="fab fa-facebook"></i></a>
+                                        <a href="https://www.instagram.com/<?php echo $row['contactIg'] ?>"><i class="fab fa-instagram"></i></a>
                                     </div>
                                 </li>
                             </ul>

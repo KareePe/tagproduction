@@ -1,3 +1,6 @@
+<?php
+require 'config/dbconfig.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +29,7 @@
 
         <!--Page Header Start-->
         <section class="page-header">
-            <div class="page-header-bg" style="background-image: url(assets/images/backgrounds/page-header-bg.jpg)">
+            <div class="page-header-bg" style="background-image: url(images/lanos/LINE_ALBUM_Avani_240213_0.jpg)">
             </div>
             <div class="container">
                 <div class="page-header__inner">
@@ -49,26 +52,29 @@
                     <div class="col-xl-6 col-lg-6">
                         <div class="contact-two__left">
                             <div class="contact-two__img">
-                                <img src="assets/images/resources/contact-two-img-1.jpg" alt="">
+                                <img src="images/contact-two-img-1.jpg" alt="">
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-6">
                         <div class="contact-two__right">
                             <div class="section-title text-left">
-                                <span class="section-title__tagline">contact with us</span>
-                                <h2 class="section-title__title">Get in touch now</h2>
+                                <!-- <span class="section-title__tagline">contact with us</span> -->
+                                <h2 class="section-title__title">contact with us</h2>
                             </div>
-                            <p class="contact-two__text-1">Lorem ipsum dolor sit amet, consectetur notted adipis not
-                                icing elit sed do eiusmod tempor incididunt.</p>
+                            <?php
+                            $stmt = $pdo->prepare("SELECT * FROM tb_contact");
+                            $stmt->execute();
+                            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                            ?>
                             <ul class="list-unstyled contact-two__list">
                                 <li>
                                     <div class="icon">
                                         <i class="icon-telephone"></i>
                                     </div>
                                     <div class="content">
-                                        <p>Have any question?</p>
-                                        <h4> <span>Free</span> <a href="tel:230009850">+23 (000)-9850</a></h4>
+                                        <p>TEL</p>
+                                        <h4><a href="javascript:void(0)"><?php echo $row['contactTel'] ?></a></h4>
                                     </div>
                                 </li>
                                 <li>
@@ -77,16 +83,25 @@
                                     </div>
                                     <div class="content">
                                         <p>Write email</p>
-                                        <h4><a href="mailto:needhelp@company.com">needhelp@company.com</a></h4>
+                                        <h4><a href="mailto:<?php echo $row['contactMail'] ?>"><?php echo $row['contactMail'] ?></a></h4>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="icon">
-                                        <i class="icon-pin"></i>
+                                        <i class="fab fa-facebook"></i>
                                     </div>
                                     <div class="content">
-                                        <p>Visit anytime</p>
-                                        <h4>30 broklyn golden street. New York</h4>
+                                        <p>Visit Fanpage</p>
+                                        <h4><?php echo $row['contactFacebook'] ?></h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fab fa-instagram"></i>
+                                    </div>
+                                    <div class="content">
+                                        <p>Visit Instagram</p>
+                                        <h4><?php echo $row['contactIg'] ?></h4>
                                     </div>
                                 </li>
                             </ul>
@@ -104,7 +119,11 @@
 
     </div><!-- /.page-wrapper -->
 
-
+    <?php
+    $stmt = $pdo->prepare("SELECT * FROM tb_contact");
+    $stmt->execute();
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    ?>
     <div class="mobile-nav__wrapper">
         <div class="mobile-nav__overlay mobile-nav__toggler"></div>
         <!-- /.mobile-nav__overlay -->
@@ -121,19 +140,17 @@
             <ul class="mobile-nav__contact list-unstyled">
                 <li>
                     <i class="fa fa-envelope"></i>
-                    <a href="mailto:needhelp@packageName__.com">needhelp@agrion.com</a>
+                    <a href="mailto:<?php echo $row['contactMail'] ?>"><?php echo $row['contactMail'] ?></a>
                 </li>
                 <li>
                     <i class="fa fa-phone-alt"></i>
-                    <a href="tel:666-888-0000">666 888 0000</a>
+                    <a href="javascript:void(0)"><?php echo $row['contactTel'] ?></a>
                 </li>
             </ul><!-- /.mobile-nav__contact -->
             <div class="mobile-nav__top">
                 <div class="mobile-nav__social">
-                    <a href="#" class="fab fa-twitter"></a>
-                    <a href="#" class="fab fa-facebook-square"></a>
-                    <a href="#" class="fab fa-pinterest-p"></a>
-                    <a href="#" class="fab fa-instagram"></a>
+                    <a href="https://www.facebook.com/<?php echo $row['contactFacebook'] ?>" class="fab fa-facebook-square"></a>
+                    <a href="https://www.instagram.com/<?php echo $row['contactIg'] ?>" class="fab fa-instagram"></a>
                 </div><!-- /.mobile-nav__social -->
             </div><!-- /.mobile-nav__top -->
 

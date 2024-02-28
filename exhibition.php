@@ -34,7 +34,7 @@ if (!isset($type) || $type === '') header("location:/");
 
         <!--Page Header Start-->
         <section class="page-header">
-            <div class="page-header-bg" style="background-image: url(assets/images/backgrounds/page-header-bg.jpg)">
+            <div class="page-header-bg" style="background-image: url(images/hi-top-tech/8f3efadb-c748-499f-b03b-a6ba55647893.jpg)">
             </div>
             <div class="container">
                 <div class="page-header__inner">
@@ -68,9 +68,9 @@ if (!isset($type) || $type === '') header("location:/");
                         <div class="col-xl-3 col-lg-6 col-md-6">
                             <div class="gallery-three__single">
                                 <div class="gallery-three__img">
-                                    <img src="assets/images/gallery/gallery-3-1.jpg" alt="">
+                                    <img src="images/hi-top-tech/3c870f83-01ae-4c28-bd59-74b94d688d7f.jpg" alt="">
                                     <div class="gallery-three__icon">
-                                        <a class="img-popup" href="assets/images/gallery/gallery-3-1.jpg"><span class="fa fa-plus"></span></a>
+                                        <a class="img-popup" href="images/hi-top-tech/3c870f83-01ae-4c28-bd59-74b94d688d7f.jpg"><span class="fa fa-plus"></span></a>
                                     </div>
                                 </div>
                             </div>
@@ -80,9 +80,9 @@ if (!isset($type) || $type === '') header("location:/");
                         <div class="col-xl-3 col-lg-6 col-md-6">
                             <div class="gallery-three__single">
                                 <div class="gallery-three__img">
-                                    <img src="assets/images/gallery/gallery-3-2.jpg" alt="">
+                                    <img src="images/hi-top-tech/8f3efadb-c748-499f-b03b-a6ba55647893.jpg" alt="">
                                     <div class="gallery-three__icon">
-                                        <a class="img-popup" href="assets/images/gallery/gallery-3-2.jpg"><span class="fa fa-plus"></span></a>
+                                        <a class="img-popup" href="images/hi-top-tech/8f3efadb-c748-499f-b03b-a6ba55647893.jpg"><span class="fa fa-plus"></span></a>
                                     </div>
                                 </div>
                             </div>
@@ -92,9 +92,9 @@ if (!isset($type) || $type === '') header("location:/");
                         <div class="col-xl-3 col-lg-6 col-md-6">
                             <div class="gallery-three__single">
                                 <div class="gallery-three__img">
-                                    <img src="assets/images/gallery/gallery-3-3.jpg" alt="">
+                                    <img src="images/hi-top-tech/8f8b6eff-8e41-4d6b-aef2-bb4d15d435a4.jpg" alt="">
                                     <div class="gallery-three__icon">
-                                        <a class="img-popup" href="assets/images/gallery/gallery-3-3.jpg"><span class="fa fa-plus"></span></a>
+                                        <a class="img-popup" href="images/hi-top-tech/8f8b6eff-8e41-4d6b-aef2-bb4d15d435a4.jpg"><span class="fa fa-plus"></span></a>
                                     </div>
                                 </div>
                             </div>
@@ -104,9 +104,9 @@ if (!isset($type) || $type === '') header("location:/");
                         <div class="col-xl-3 col-lg-6 col-md-6">
                             <div class="gallery-three__single">
                                 <div class="gallery-three__img">
-                                    <img src="assets/images/gallery/gallery-3-4.jpg" alt="">
+                                    <img src="images/hi-top-tech/d26a59c3-03db-4ec8-94d8-6a1d7873dad3.jpg" alt="">
                                     <div class="gallery-three__icon">
-                                        <a class="img-popup" href="assets/images/gallery/gallery-3-4.jpg"><span class="fa fa-plus"></span></a>
+                                        <a class="img-popup" href="images/hi-top-tech/d26a59c3-03db-4ec8-94d8-6a1d7873dad3.jpg"><span class="fa fa-plus"></span></a>
                                     </div>
                                 </div>
                             </div>
@@ -116,16 +116,16 @@ if (!isset($type) || $type === '') header("location:/");
                         <div class="col-xl-3 col-lg-6 col-md-6">
                             <div class="gallery-three__single">
                                 <div class="gallery-three__img">
-                                    <img src="assets/images/gallery/gallery-3-5.jpg" alt="">
+                                    <img src="images/hi-top-tech/e88a9a65-9b77-4165-9648-3985f92ce9c2.jpg" alt="">
                                     <div class="gallery-three__icon">
-                                        <a class="img-popup" href="assets/images/gallery/gallery-3-5.jpg"><span class="fa fa-plus"></span></a>
+                                        <a class="img-popup" href="images/hi-top-tech/e88a9a65-9b77-4165-9648-3985f92ce9c2.jpg"><span class="fa fa-plus"></span></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <!--Gallery Three Single Start-->
                         <!--Gallery Three Single Start-->
-                        <div class="col-xl-3 col-lg-6 col-md-6">
+                        <!-- <div class="col-xl-3 col-lg-6 col-md-6">
                             <div class="gallery-three__single">
                                 <div class="gallery-three__img">
                                     <img src="assets/images/gallery/gallery-3-6.jpg" alt="">
@@ -134,10 +134,10 @@ if (!isset($type) || $type === '') header("location:/");
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!--Gallery Three Single Start-->
                         <!--Gallery Three Single Start-->
-                        <div class="col-xl-3 col-lg-6 col-md-6">
+                        <!-- <div class="col-xl-3 col-lg-6 col-md-6">
                             <div class="gallery-three__single">
                                 <div class="gallery-three__img">
                                     <img src="assets/images/gallery/gallery-3-7.jpg" alt="">
@@ -146,7 +146,7 @@ if (!isset($type) || $type === '') header("location:/");
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!--Gallery Three Single Start-->
                     </div>
                 <?php
@@ -222,6 +222,11 @@ if (!isset($type) || $type === '') header("location:/");
     </div><!-- /.page-wrapper -->
 
 
+    <?php
+    $stmt = $pdo->prepare("SELECT * FROM tb_contact");
+    $stmt->execute();
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    ?>
     <div class="mobile-nav__wrapper">
         <div class="mobile-nav__overlay mobile-nav__toggler"></div>
         <!-- /.mobile-nav__overlay -->
@@ -238,19 +243,17 @@ if (!isset($type) || $type === '') header("location:/");
             <ul class="mobile-nav__contact list-unstyled">
                 <li>
                     <i class="fa fa-envelope"></i>
-                    <a href="mailto:needhelp@packageName__.com">needhelp@agrion.com</a>
+                    <a href="mailto:<?php echo $row['contactMail'] ?>"><?php echo $row['contactMail'] ?></a>
                 </li>
                 <li>
                     <i class="fa fa-phone-alt"></i>
-                    <a href="tel:666-888-0000">666 888 0000</a>
+                    <a href="javascript:void(0)"><?php echo $row['contactTel'] ?></a>
                 </li>
             </ul><!-- /.mobile-nav__contact -->
             <div class="mobile-nav__top">
                 <div class="mobile-nav__social">
-                    <a href="#" class="fab fa-twitter"></a>
-                    <a href="#" class="fab fa-facebook-square"></a>
-                    <a href="#" class="fab fa-pinterest-p"></a>
-                    <a href="#" class="fab fa-instagram"></a>
+                    <a href="https://www.facebook.com/<?php echo $row['contactFacebook'] ?>" class="fab fa-facebook-square"></a>
+                    <a href="https://www.instagram.com/<?php echo $row['contactIg'] ?>" class="fab fa-instagram"></a>
                 </div><!-- /.mobile-nav__social -->
             </div><!-- /.mobile-nav__top -->
 
