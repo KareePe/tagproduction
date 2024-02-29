@@ -11,7 +11,7 @@ $resultType = str_replace("title=", "", $title);
 $titleDash = str_replace(" ", "-", $resultType);
 $img = $data->img;
 
-if ($title !== null && $img !== null) {
+if ($img !== null) {
     try {
         $stmt = $pdo->prepare("INSERT INTO tb_slide(slideTitle,slideImg) VALUES(:slideTitle,:slideImg)");
 
@@ -22,17 +22,17 @@ if ($title !== null && $img !== null) {
 
         if ($stmt->execute()) {
             $response['status'] = 'OK';
-            $response['message'] = 'insert slide success';
+            $response['message'] = 'Image slide has been successfully inserted.';
         } else {
             $response['status'] = 'ERR';
-            $response['message'] = 'error insert slide';
+            $response['message'] = 'Unable to update image slide';
         }
     } catch (PDOException $e) {
-        $response['status'] = 'err';
+        $response['status'] = 'ERR';
         $response['message'] = $e->getMessage();
     }
 } else {
-    $response['status'] = 'err';
+    $response['status'] = 'ERR';
     $response['message'] = 'Invalid data received';
 }
 

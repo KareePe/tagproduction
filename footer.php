@@ -74,7 +74,7 @@ require 'config/dbconfig.php';
             <div class="row">
                 <div class="col-xl-12">
                     <div class="site-footer__bottom-inner">
-                        <p class="site-footer__bottom-text">© All Copyright 2022 by <a href="#">Tag Production</a>
+                        <p class="site-footer__bottom-text">© All Copyright <a href="#">Tag Production</a>
                         </p>
                     </div>
                 </div>

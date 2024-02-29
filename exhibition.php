@@ -1,8 +1,10 @@
 <?php
+require 'config/dbconfig.php';
+
 $type = $_GET["type"];
 $sub = $_GET["sub"];
 
-$sub = str_replace('-', ' ', $sub);
+// $sub = str_replace('-', ' ', $sub);
 
 if (!isset($type) || $type === '') header("location:/");
 ?>
@@ -41,7 +43,7 @@ if (!isset($type) || $type === '') header("location:/");
                     <ul class="thm-breadcrumb list-unstyled">
                         <li><a href="index.html">Home</a></li>
                         <li><span>/</span></li>
-                        <li>Exhibition</li>
+                        <li><?php echo $_GET['type'] ?></li>
                     </ul>
                     <?php
                     if (isset($sub)) {
@@ -57,97 +59,34 @@ if (!isset($type) || $type === '') header("location:/");
         <section class="team-two">
             <div class="container">
                 <div class="section-title text-center">
-                    <span class="section-title__tagline">Exhibition</span>
+                    <span class="section-title__tagline"><?php echo $_GET['type'] ?></span>
                     <h2 class="section-title__title">Our Exhibition Stand</h2>
                 </div>
                 <?php
                 if (isset($sub)) {
                 ?>
                     <div class="row masonary-layout">
-                        <!--Gallery Three Single Start-->
-                        <div class="col-xl-3 col-lg-6 col-md-6">
-                            <div class="gallery-three__single">
-                                <div class="gallery-three__img">
-                                    <img src="images/hi-top-tech/3c870f83-01ae-4c28-bd59-74b94d688d7f.jpg" alt="">
-                                    <div class="gallery-three__icon">
-                                        <a class="img-popup" href="images/hi-top-tech/3c870f83-01ae-4c28-bd59-74b94d688d7f.jpg"><span class="fa fa-plus"></span></a>
+                        <?php
+                        $work = $pdo->prepare("SELECT * FROM tb_img_work WHERE typeName = :typeName");
+                        $work->bindParam(":typeName", $sub);
+                        $work->execute();
+
+                        while ($rowWork = $work->fetch(PDO::FETCH_ASSOC)) {
+                        ?>
+                            <!--Gallery Three Single Start-->
+                            <div class="col-xl-3 col-lg-6 col-md-6">
+                                <div class="gallery-three__single">
+                                    <div class="gallery-three__img">
+                                        <img src="<?php echo $rowWork['base64Img'] ?>" alt="">
+                                        <div class="gallery-three__icon">
+                                            <a class="img-popup" href="<?php echo $rowWork['base64Img'] ?>"><span class="fa fa-plus"></span></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!--Gallery Three Single Start-->
-                        <!--Gallery Three Single Start-->
-                        <div class="col-xl-3 col-lg-6 col-md-6">
-                            <div class="gallery-three__single">
-                                <div class="gallery-three__img">
-                                    <img src="images/hi-top-tech/8f3efadb-c748-499f-b03b-a6ba55647893.jpg" alt="">
-                                    <div class="gallery-three__icon">
-                                        <a class="img-popup" href="images/hi-top-tech/8f3efadb-c748-499f-b03b-a6ba55647893.jpg"><span class="fa fa-plus"></span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Gallery Three Single Start-->
-                        <!--Gallery Three Single Start-->
-                        <div class="col-xl-3 col-lg-6 col-md-6">
-                            <div class="gallery-three__single">
-                                <div class="gallery-three__img">
-                                    <img src="images/hi-top-tech/8f8b6eff-8e41-4d6b-aef2-bb4d15d435a4.jpg" alt="">
-                                    <div class="gallery-three__icon">
-                                        <a class="img-popup" href="images/hi-top-tech/8f8b6eff-8e41-4d6b-aef2-bb4d15d435a4.jpg"><span class="fa fa-plus"></span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Gallery Three Single Start-->
-                        <!--Gallery Three Single Start-->
-                        <div class="col-xl-3 col-lg-6 col-md-6">
-                            <div class="gallery-three__single">
-                                <div class="gallery-three__img">
-                                    <img src="images/hi-top-tech/d26a59c3-03db-4ec8-94d8-6a1d7873dad3.jpg" alt="">
-                                    <div class="gallery-three__icon">
-                                        <a class="img-popup" href="images/hi-top-tech/d26a59c3-03db-4ec8-94d8-6a1d7873dad3.jpg"><span class="fa fa-plus"></span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Gallery Three Single Start-->
-                        <!--Gallery Three Single Start-->
-                        <div class="col-xl-3 col-lg-6 col-md-6">
-                            <div class="gallery-three__single">
-                                <div class="gallery-three__img">
-                                    <img src="images/hi-top-tech/e88a9a65-9b77-4165-9648-3985f92ce9c2.jpg" alt="">
-                                    <div class="gallery-three__icon">
-                                        <a class="img-popup" href="images/hi-top-tech/e88a9a65-9b77-4165-9648-3985f92ce9c2.jpg"><span class="fa fa-plus"></span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Gallery Three Single Start-->
-                        <!--Gallery Three Single Start-->
-                        <!-- <div class="col-xl-3 col-lg-6 col-md-6">
-                            <div class="gallery-three__single">
-                                <div class="gallery-three__img">
-                                    <img src="assets/images/gallery/gallery-3-6.jpg" alt="">
-                                    <div class="gallery-three__icon">
-                                        <a class="img-popup" href="assets/images/gallery/gallery-3-6.jpg"><span class="fa fa-plus"></span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-                        <!--Gallery Three Single Start-->
-                        <!--Gallery Three Single Start-->
-                        <!-- <div class="col-xl-3 col-lg-6 col-md-6">
-                            <div class="gallery-three__single">
-                                <div class="gallery-three__img">
-                                    <img src="assets/images/gallery/gallery-3-7.jpg" alt="">
-                                    <div class="gallery-three__icon">
-                                        <a class="img-popup" href="assets/images/gallery/gallery-3-7.jpg"><span class="fa fa-plus"></span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-                        <!--Gallery Three Single Start-->
+                        <?php
+                        }
+                        ?>
                     </div>
                 <?php
                 } else {
@@ -156,54 +95,6 @@ if (!isset($type) || $type === '') header("location:/");
                     <section class="feature-four">
                         <div class="container">
                             <div class="row">
-                                <!--Feature Three Single Start-->
-                                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
-                                    <div class="feature-four__single">
-                                        <div class="feature-four__img-box">
-                                            <div class="feature-four__img">
-                                                <img src="assets/images/resources/feature-four-1-1.jpg" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="feature-four__content">
-                                            <h3 class="feature-four__title"><a href="exhibition?type=<?php echo $type ?>&sub=pet-world">Living experience</a></h3>
-                                            <p class="feature-four__text">There are many variations of passages of available, but
-                                                the majority have in some form, by humour words.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--Feature Three Single End-->
-                                <!--Feature Three Single Start-->
-                                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
-                                    <div class="feature-four__single">
-                                        <div class="feature-four__img-box">
-                                            <div class="feature-four__img">
-                                                <img src="assets/images/resources/feature-four-1-2.jpg" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="feature-four__content">
-                                            <h3 class="feature-four__title"><a href="exhibition?type=<?php echo $type ?>&sub=pet-world">Property management</a></h3>
-                                            <p class="feature-four__text">There are many variations of passages of available, but
-                                                the majority have in some form, by humour words.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--Feature Three Single End-->
-                                <!--Feature Three Single Start-->
-                                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="300ms">
-                                    <div class="feature-four__single">
-                                        <div class="feature-four__img-box">
-                                            <div class="feature-four__img">
-                                                <img src="assets/images/resources/feature-four-1-3.jpg" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="feature-four__content">
-                                            <h3 class="feature-four__title"><a href="exhibition?type=<?php echo $type ?>&sub=pet-world">Premium places</a></h3>
-                                            <p class="feature-four__text">There are many variations of passages of available, but
-                                                the majority have in some form, by humour words.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--Feature Three Single End-->
                             </div>
                         </div>
                     </section>

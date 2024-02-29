@@ -23,10 +23,10 @@ if ($phone !== null && $email !== null && $facebook !== null && $instagram !== n
 
     if ($update->execute()) {
         $response['status'] = 'OK';
-        $response['message'] = 'update contact success';
+        $response['message'] = 'Contact information has been successfully updated.';
     } else {
         $response['status'] = 'ERR';
-        $response['message'] = 'error update contact';
+        $response['message'] = 'Unable to update contact information';
     }
 
 } else {

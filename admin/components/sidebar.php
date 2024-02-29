@@ -21,7 +21,7 @@
             </li>
 
             
-            <li class="disabled nav-item"><a href="#"><i class="feather icon-log-out"></i><span class="menu-title" data-i18n="Disabled Menu">ออกจากระบบ</span></a>
+            <li class=" nav-item"><a href="logout"><i class="feather icon-log-out"></i><span class="menu-title" data-i18n="Disabled Menu">ออกจากระบบ</span></a>
             </li>
         </ul>
     </div>

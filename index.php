@@ -28,7 +28,7 @@ require 'config/dbconfig.php';
         ?>
 
         <!--Main Slider Start-->
-        <section class="main-slider clearfix">
+        <section class="main-slider clearfix" style="height: 100vh;">
             <div class="swiper-container thm-swiper__slider" data-swiper-options='{"slidesPerView": 1, "loop": true,
                 "effect": "fade",
                 "pagination": {
@@ -43,7 +43,7 @@ require 'config/dbconfig.php';
                 "autoplay": {
                 "delay": 5000
                 }}'>
-                <div class="swiper-wrapper">
+                <div class="swiper-wrapper" style="height: 100vh;">
                     <?php
                     $stmt = $pdo->prepare("SELECT * FROM tb_slide WHERE slideStatus = 'on'");
                     $stmt->execute();
@@ -52,13 +52,13 @@ require 'config/dbconfig.php';
                         // $title = str_replace("title=", "", $row['slideTitle']);
                     ?>
                         <div class="swiper-slide">
-                            <div class="image-layer" style="background-image: url(<?php echo $row['slideImg'] ?>);"></div>
+                            <div class="image-layer" style="background-image: url(<?php echo $row['slideImg'] ?>);height: 100vh;" ></div>
                             <!-- /.image-layer -->
                             <div class="container">
                                 <div class="row">
                                     <div class="col-xl-12">
                                         <div class="main-slider__content">
-                                            <h2 class="main-slider__title"><?php echo $decodedString ?></h2>
+                                            <h2 class="main-slider__title" style="display:none;"><?php echo $decodedString ?></h2>
                                         </div>
                                     </div>
                                 </div>
@@ -107,7 +107,7 @@ require 'config/dbconfig.php';
                     </div>
                     <div class="value-two__right-content">
                         <div class="section-title text-left">
-                            <span class="section-title__tagline">Elevate Your Brand Presence with </span>
+                            <span class="section-title__tagline">ABOUT US </span>
                             <h2 class="section-title__title">Award-Winning Exhibition Stands</h2>
                         </div>
                         <p class="value-two__text">With over 20 years of experience, Tag Production delivers exceptional exhibition stand design and build services globally. Our expert team understands your unique needs and creates stands that captivate audiences and effectively showcase your products or services. We combine design, construction, and project management expertise to ensure a seamless and successful exhibition experience.</p>

@@ -17,10 +17,15 @@
 /*--------------------------------------------------------------
 # Common
 --------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
 :root {
-  --aports-font: 'DM Sans', sans-serif;
-  --aports-reey-font: "reeyregular";
+  /* --aports-font: 'DM Sans', sans-serif;
+  --aports-reey-font: "reeyregular"; */
+  --aports-font: 'Libre Baskerville', sans-serif;
+  --aports-reey-font: "Libre Baskerville";
   --aports-gray: #87898e;
+  --aports-black: #272727;
   --aports-gray-rgb: 135, 137, 142;
   --aports-white: #ffffff;
   --aports-white-rgb: 255, 255, 255;
@@ -49,6 +54,7 @@ body {
   font-size: 16px;
   line-height: 30px;
   font-weight: 400;
+  background-color: var(--aports-black);
 }
 
 body.locked {
@@ -92,7 +98,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--aports-black);
+  color: var(--aports-white);
   margin: 0;
 }
 
@@ -306,7 +312,7 @@ ul {
 
 .section-title__title {
   margin: 0;
-  color: var(--aports-black);
+  color: var(--aports-white);
   font-size: 45px;
   line-height: 54px;
   font-weight: 700;
@@ -1318,7 +1324,7 @@ ul {
 
 
 .stricky-header.main-menu-two {
-  background-color: var(--aports-white);
+  background-color: var(--aports-black);
 }
 
 .main-menu-two__search-btn-box {
@@ -1378,14 +1384,14 @@ ul {
 
 .main-menu-two .main-menu__list>li>a,
 .stricky-header.main-menu-two .main-menu__list>li>a {
-  color: var(--aports-gray);
+  color: var(--aports-white);
 }
 
 .main-menu-two .main-menu__list>li.current>a,
 .main-menu-two .main-menu__list>li:hover>a,
 .stricky-header.main-menu-two .main-menu__list>li.current>a,
 .stricky-header.main-menu-two .main-menu__list>li:hover>a {
-  color: var(--aports-black);
+  color: var(--aports-white);
 }
 
 /*--------------------------------------------------------------
@@ -1683,7 +1689,7 @@ ul {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(37, 37, 43, .70);
+  background-color: rgba(37, 37, 43, .20);
 }
 
 .main-slider__content {
@@ -6050,7 +6056,7 @@ ul {
   width: 50%;
   float: right;
   background-color: #fff;
-  /* background-color: var(--aports-black); */
+  background-color: var(--aports-black);
   z-index: 1;
 }
 
@@ -6081,8 +6087,8 @@ ul {
 }
 
 .value-two__right .section-title__title {
-  /* color: var(--aports-white); */
-  color: var(--aports-black);
+  color: var(--aports-white);
+  /* color: var(--aports-black); */
 }
 
 .value-two__text {
@@ -6130,8 +6136,8 @@ ul {
 }
 
 .value-two__points li .text p {
-  /* color: var(--aports-white); */
-  color: var(--aports-black);
+  color: var(--aports-white);
+  /* color: var(--aports-black); */
   font-weight: 500;
 }
 
@@ -7164,7 +7170,7 @@ ul {
 }
 
 .contact-two__list li .content h4 a {
-  color: var(--aports-black);
+  color: var(--aports-white);
   -webkit-transition: all 500ms ease;
   transition: all 500ms ease;
 }
@@ -8175,7 +8181,7 @@ ul {
 }
 
 .team-two__name a {
-  color: var(--aports-black);
+  color: var(--aports-white);
 }
 
 .team-two__sub-title {
@@ -8196,6 +8202,20 @@ ul {
   padding: 120px 0 90px;
 }
 
+
+.bg-black{
+  background-color: var(--aports-black);
+  color:#fff;
+}
+
+.bg-black .li__list.current a{
+  color:#d5d5d5 !important;
+}
+
+
+.bg-black > .li__list a{
+  color:#fff !important;
+}
 
 
 

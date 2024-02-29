@@ -94,7 +94,6 @@ include_once("../components/head.php");
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="submit" class="btn btn-primary btn-block" style="display: flex;justify-content: center;gap: 10px;"><span class="btn-loading"></span>บันทึก</button>
-                                                <!-- <button type="reset" class="btn grey btn-outline-secondary btn-block" data-dismiss="modal">ยกเลิก</button> -->
                                             </div>
                                         </form>
                                     </div>
@@ -115,9 +114,7 @@ include_once("../components/head.php");
     include_once("../components/script.php");
     ?>
 
-    <!-- BEGIN: Page JS-->
-    <!-- <script src="../app-assets/js/scripts/cards/card-statistics.js"></script> -->
-    <!-- END: Page JS-->
+    <script src="../forms/form-contact.js"></script>
 
 </body>
 <!-- END: Body-->

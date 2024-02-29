@@ -22,5 +22,5 @@
 <!-- END: Page JS-->
 
 <!-- BEGIN: Forms JS-->
-<script src="../forms/forms.js"></script>
+<!-- <script src="../forms/forms.js"></script> -->
 <!-- END: Forms JS-->

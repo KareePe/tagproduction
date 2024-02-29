@@ -112,12 +112,12 @@ include_once("../components/head.php");
                         <fieldset class="form-group mb-2">
                             <div class="controls">
                                 <label for="title">เพิ่มข้อความ</label>
-                                <input type="text" autocomplete="off" name="title" class="form-control form-control-md" id="title" placeholder="เพิ่มข้อความ..." required data-validation-required-message="กรุณาเพิ่มข้อความ">
+                                <input type="text" autocomplete="off" name="title" class="form-control form-control-md" id="title" placeholder="เพิ่มข้อความ...">
                             </div>
                         </fieldset>
 
                         <fieldset class="form-group">
-                            <label for="basicInputFile">เลือกรูปภาพสไลด์</label>
+                            <label for="basicInputFile">เลือกรูปภาพสไลด์ <span>*</span></label>
                             <div class="custom-file">
                                 <input type="file" accept="image/*" class="custom-file-input img-slide" name="imgslide" id="imgslide">
                                 <label class="custom-file-label" for="imgslide">เลือกไฟล์</label>
@@ -143,9 +143,7 @@ include_once("../components/head.php");
     include_once("../components/script.php");
     ?>
 
-    <!-- BEGIN: Page JS-->
-    <!-- <script src="../app-assets/js/scripts/cards/card-statistics.js"></script> -->
-    <!-- END: Page JS-->
+    <script src="../forms/forms.js"></script>
 
 </body>
 <!-- END: Body-->

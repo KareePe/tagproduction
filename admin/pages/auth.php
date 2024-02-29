@@ -116,6 +116,8 @@ include_once("../components/head.php");
     <?php
     include_once("../components/script.php");
     ?>
+
+    <script src="../forms/forms.js"></script>
 </body>
 <!-- END: Body-->
 

@@ -359,9 +359,7 @@ include_once("../components/head.php");
     include_once("../components/script.php");
     ?>
 
-    <!-- BEGIN: Page JS-->
-    <!-- <script src="../app-assets/js/scripts/cards/card-statistics.js"></script> -->
-    <!-- END: Page JS-->
+    <script src="../forms/forms.js"></script>
 
 </body>
 <!-- END: Body-->

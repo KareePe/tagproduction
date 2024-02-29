@@ -59,7 +59,7 @@ const editSlide = (id) => {
     icon: "info",
     confirmButtonText: "ตกลง",
   }).then((result) => {
-    if (result.isConfirmeded) {
+    if (result.isConfirmed) {
       $.ajax({
         url: "../server/edit_slide",
         type: "GET",
@@ -107,7 +107,7 @@ const editType = (id) => {
     icon: "info",
     confirmButtonText: "ตกลง",
   }).then((result) => {
-    if (result.isConfirmeded) {
+    if (result.isConfirmed) {
       $.ajax({
         url: "../server/edit_type",
         type: "GET",
@@ -475,7 +475,6 @@ $(document).ready(function () {
           url: "../server/slide",
           data: { slideData: data },
           success: function (response) {
-            console.log(response, "response");
             buttons.forEach((button) => {
               button.classList.remove("spinner");
             });
@@ -483,9 +482,18 @@ $(document).ready(function () {
             if (response.status === "OK") {
               $("#slideAdd").modal("hide");
             }
-            loadData();
-            location.reload();
-            // window.location.href = "../index";
+            Swal.fire({
+              title: "สำเร็จ!",
+              text: "เพิ่มรูปภาพสไลด์หน้าแรกเรียบร้อยแล้ว",
+              icon: "success",
+              confirmButtonText: "ตกลง",
+              allowOutsideClick: false,
+              allowEscapeKey: false,
+            }).then((result) => {
+              if (result.isConfirmed) {
+                location.reload();
+              }
+            });
           },
           error: function (err) {
             console.log(err, "err");
@@ -493,10 +501,21 @@ $(document).ready(function () {
               button.classList.remove("spinner");
             });
             $(".btn").attr("disabled", false);
+            Swal.fire({
+              title: "ผิดลพาด!",
+              text: "ไม่สามารถเพิ่มรูปภาพสไลด์หน้าแรกได้",
+              icon: "error",
+              confirmButtonText: "ตกลง",
+              allowOutsideClick: false,
+              allowEscapeKey: false,
+            }).then((result) => {
+              if (result.isConfirmed) {
+                location.reload();
+              }
+            });
           },
         });
       } catch (error) {
-        console.error("Error converting to base64:", error);
         buttons.forEach((button) => {
           button.classList.remove("spinner");
         });
@@ -512,10 +531,6 @@ $(document).ready(function () {
         text: "กรุณากรอกข้อมูลให้ครบถ้วน",
         icon: "warning",
         confirmButtonText: "ตกลง",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          location.reload();
-        }
       });
     }
   });
@@ -538,32 +553,54 @@ $(document).ready(function () {
         url: "../server/type",
         data: formData,
         success: function (response) {
-          console.log(response, "response");
           buttons.forEach((button) => {
             button.classList.remove("spinner");
           });
           $(".btn").attr("disabled", false);
           if (response.status === "OK") {
             $("#typeAdd").modal("hide");
+            Swal.fire({
+              title: "สำเร็จ!",
+              text: "หมวดหมู่ได้ถูกเพิ่มเรียบร้อยแล้ว",
+              icon: "success",
+              confirmButtonText: "ตกลง",
+              allowOutsideClick: false,
+              allowEscapeKey: false,
+            }).then((result) => {
+              if (result.isConfirmed) {
+                location.reload();
+              }
+            });
           }
-          getType();
-          location.reload();
-          // window.location.href = "../index";
         },
         error: function (err) {
-          console.log(err, "err");
           buttons.forEach((button) => {
             button.classList.remove("spinner");
           });
           $(".btn").attr("disabled", false);
+          Swal.fire({
+            title: "ผิดพลาด!",
+            text: "ไม่สามารถเพิ่มหมวดหมู่ได้",
+            icon: "error",
+            confirmButtonText: "ตกลง",
+            allowOutsideClick: false,
+            allowEscapeKey: false,
+          });
         },
       });
     } catch (error) {
-      console.error("Error converting to base64:", error);
       buttons.forEach((button) => {
         button.classList.remove("spinner");
       });
       $(".btn").attr("disabled", false);
+      Swal.fire({
+        title: "ผิดพลาด!",
+        text: error,
+        icon: "error",
+        confirmButtonText: "ตกลง",
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+      });
     }
   });
 
@@ -661,68 +698,6 @@ $(document).ready(function () {
         if (result.isConfirmed) {
           location.reload();
         }
-      });
-    }
-  });
-
-  $(".form-contact").submit((e) => {
-    $(".btn").attr("disabled", true);
-    e.preventDefault();
-
-    const buttons = document.querySelectorAll(".btn-loading");
-    buttons.forEach((button) => {
-      button.classList.add("spinner");
-    });
-
-    const formData = $(".form-contact").serialize();
-
-    console.log(formData);
-    try {
-      $.ajax({
-        type: "POST",
-        dataType: "json",
-        url: "../server/contact",
-        data: formData,
-        success: function (response) {
-          console.log(response, "response");
-          buttons.forEach((button) => {
-            button.classList.remove("spinner");
-          });
-          $(".btn").attr("disabled", false);
-          if (response.status === "OK") {
-            Swal.fire({
-              title: "อัพเดท!",
-              text: "อัพเดทข้อมูลติดต่อสำเร็จ",
-              icon: "success",
-              confirmButtonText: "ตกลง",
-            });
-          }
-        },
-        error: function (err) {
-          console.log(err, "err");
-          buttons.forEach((button) => {
-            button.classList.remove("spinner");
-          });
-          $(".btn").attr("disabled", false);
-          Swal.fire({
-            title: "ผิดพลาด!",
-            text: "อัพเดทข้อมูลติดต่อไม่สำเร็จ",
-            icon: "error",
-            confirmButtonText: "ตกลง",
-          });
-        },
-      });
-    } catch (error) {
-      console.error("Error converting to base64:", error);
-      buttons.forEach((button) => {
-        button.classList.remove("spinner");
-      });
-      $(".btn").attr("disabled", false);
-      Swal.fire({
-        title: "ผิดพลาด!",
-        text: error,
-        icon: "error",
-        confirmButtonText: "ตกลง",
       });
     }
   });
