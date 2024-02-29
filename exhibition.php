@@ -36,8 +36,18 @@ if (!isset($type) || $type === '') header("location:/");
 
         <!--Page Header Start-->
         <section class="page-header">
-            <div class="page-header-bg" style="background-image: url(images/hi-top-tech/8f3efadb-c748-499f-b03b-a6ba55647893.jpg)">
-            </div>
+            <?php
+            $workImg = $pdo->prepare("SELECT * FROM tb_img_work WHERE typeName = :typeName ORDER BY workImgId ASC LIMIT 1");
+            $workImg->bindParam(":typeName", $sub);
+            $workImg->execute();
+
+            while ($rowWorkImg = $workImg->fetch(PDO::FETCH_ASSOC)) {
+            ?>
+                <div class="page-header-bg" style="background-image: url(<?php echo $rowWorkImg['base64Img'] ?>)">
+                </div>
+            <?php
+            }
+            ?>
             <div class="container">
                 <div class="page-header__inner">
                     <ul class="thm-breadcrumb list-unstyled">

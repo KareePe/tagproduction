@@ -28,7 +28,7 @@ require 'config/dbconfig.php';
         ?>
 
         <!--Main Slider Start-->
-        <section class="main-slider clearfix" style="height: 100vh;">
+        <section class="main-slider clearfix swiper-h">
             <div class="swiper-container thm-swiper__slider" data-swiper-options='{"slidesPerView": 1, "loop": true,
                 "effect": "fade",
                 "pagination": {
@@ -43,7 +43,7 @@ require 'config/dbconfig.php';
                 "autoplay": {
                 "delay": 5000
                 }}'>
-                <div class="swiper-wrapper" style="height: 100vh;">
+                <div class="swiper-wrapper swiper-h">
                     <?php
                     $stmt = $pdo->prepare("SELECT * FROM tb_slide WHERE slideStatus = 'on'");
                     $stmt->execute();
@@ -52,7 +52,7 @@ require 'config/dbconfig.php';
                         // $title = str_replace("title=", "", $row['slideTitle']);
                     ?>
                         <div class="swiper-slide">
-                            <div class="image-layer" style="background-image: url(<?php echo $row['slideImg'] ?>);height: 100vh;" ></div>
+                            <div class="image-layer swiper-h" style="background-image: url(<?php echo $row['slideImg'] ?>);" ></div>
                             <!-- /.image-layer -->
                             <div class="container">
                                 <div class="row">
